@@ -1,0 +1,19 @@
+services:
+  postgres:
+    image: yzh44yzh/wg_forge_backend_env:1.1
+  app:
+    build: .
+    volumes:
+      - .:/var/app/cats_api
+    ports:
+      - 8000:80
+    depends_on:
+      - postgres
+    environment:
+      POSTGRES_SERVER: postgres:5432
+      POSTGRES_DB: wg_forge_db
+      POSTGRES_USER: wg_forge
+      POSTGRES_PASSWORD: 42a
+
+volumes:
+  postgres_data:
