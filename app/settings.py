@@ -9,7 +9,7 @@ class Settings(BaseSettings):
     """Config app."""
 
     APP_NAME: str = 'CatsAPI'
-    API_VERSION: str = '/v1'
+    API_VERSION: str = '/api/v1'
     POSTGRES_SERVER: str
     POSTGRES_USER: str
     POSTGRES_PASSWORD: str

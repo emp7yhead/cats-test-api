@@ -12,6 +12,8 @@ psycopg2-binary = "^2.9.3"
 SQLAlchemy = "^1.4.39"
 python-dotenv = "^0.20.0"
 asyncpg = "^0.26.0"
+requests = "^2.28.1"
+pytest-cov = "^3.0.0"
 
 [tool.poetry.dev-dependencies]
 wemake-python-styleguide = "^0.16.1"
