@@ -17,3 +17,21 @@ async def get_cats(
         select(Cats).limit(limit).offset(offset),
     )
     return all_cats.scalars().all()
+
+
+async def post_cat(
+    session: AsyncSession,
+    name: str,
+    color: str,
+    tail_length: int,
+    whiskers_length: int,
+) -> CatSchema:
+    """Post cat to database."""
+    new_cat = Cats(
+        name=name,
+        color=color,
+        tail_length=tail_length,
+        whiskers_length=whiskers_length,
+    )
+    session.add(new_cat)
+    return new_cat
