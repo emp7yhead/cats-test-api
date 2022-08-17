@@ -15,7 +15,7 @@ cat_color = Enum(
 
 
 class Cats(Base):
-    """Define answer model."""
+    """Define cat model."""
 
     __tablename__ = 'cats'
 
