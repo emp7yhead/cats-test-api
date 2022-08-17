@@ -15,3 +15,6 @@ coverage:
 
 coverage-report:
 	@poetry run python -m pytest --cov=app --cov-report xml
+
+run:
+	docker-compose up
