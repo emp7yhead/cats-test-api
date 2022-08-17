@@ -1,7 +1,9 @@
 """Model for cat."""
-from sqlalchemy import Column, Enum, Integer
+from sqlalchemy import Column, Enum, Integer, String
 
 from app.db.base_class import Base
+
+NAME_LENGTH = 20
 
 cat_color = Enum(
     'black',
@@ -19,7 +21,7 @@ class Cats(Base):
 
     __tablename__ = 'cats'
 
-    name = Column(Integer, primary_key=True)
+    name = Column(String(NAME_LENGTH), primary_key=True)
     color = Column(cat_color)
     tail_length = Column(Integer)
     whiskers_length = Column(Integer)
