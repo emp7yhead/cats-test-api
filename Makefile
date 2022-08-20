@@ -18,3 +18,5 @@ coverage-report:
 
 run:
 	docker-compose up
+
+check: lint test
