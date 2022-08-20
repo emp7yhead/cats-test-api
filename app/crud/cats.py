@@ -19,7 +19,7 @@ async def get_cats(
     return all_cats.scalars().all()
 
 
-async def post_cat(
+def post_cat(
     session: AsyncSession,
     name: str,
     color: str,
