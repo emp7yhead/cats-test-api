@@ -19,7 +19,14 @@ jobs:
       - name: Run linter
         run: |
           make lint
+      - name: Run test database
+        run: docker run yzh44yzh/wg_forge_backend_env:1.1
       - name: Run tests and collect coverage
+        env:
+          POSTGRES_SERVER: 0.0.0.0:5432
+          POSTGRES_DB: wg_forge_db
+          POSTGRES_USER: wg_forge
+          POSTGRES_PASSWORD: 42a
         run: |
           make test
           make coverage-report
