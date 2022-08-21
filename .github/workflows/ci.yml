@@ -1,4 +1,4 @@
-name: Codecov
+name: Tests and linter
 on: push
 jobs:
   lint_and_test:
@@ -23,10 +23,10 @@ jobs:
         run: docker run -d yzh44yzh/wg_forge_backend_env:1.1
       - name: Run tests and collect coverage
         env:
-          POSTGRES_SERVER: 0.0.0.0:5432
-          POSTGRES_DB: wg_forge_db
-          POSTGRES_USER: wg_forge
-          POSTGRES_PASSWORD: 42a
+          POSTGRES_SERVER: ${{ secrets.POSTGRES_SERVER }}
+          POSTGRES_DB: ${{ secrets.POSTGRES_DB }}
+          POSTGRES_USER: ${{ secrets.POSTGRES_USER }}
+          POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
         run: |
           make test
           make coverage-report
