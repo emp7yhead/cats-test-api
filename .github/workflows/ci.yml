@@ -20,7 +20,7 @@ jobs:
         run: |
           make lint
       - name: Run test database
-        run: docker run yzh44yzh/wg_forge_backend_env:1.1
+        run: docker run -d yzh44yzh/wg_forge_backend_env:1.1
       - name: Run tests and collect coverage
         env:
           POSTGRES_SERVER: 0.0.0.0:5432
