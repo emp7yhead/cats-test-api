@@ -14,8 +14,8 @@ router = APIRouter()
 @router.get('/', response_model=List[CatSchema])
 async def get_all_cats(
     session: AsyncSession = Depends(get_session),
-    offset: int | None = Query(default=None),
-    limit: int | None = Query(default=None),
+    offset: int = Query(default=None),
+    limit: int = Query(default=None),
 ) -> List[CatSchema]:
     """Get list of all cats."""
     cats = await get_cats(session, offset, limit)
